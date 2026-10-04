@@ -1,0 +1,178 @@
+<section class="calculator" id="calculator">
+  <div class="container">
+    <div class="calculator__header">
+      <span class="calculator__label">Калькулятор</span>
+      <h2 class="calculator__title">Рассчитайте стоимость работ</h2>
+      <p class="calculator__subtitle">Ответьте на 4 вопроса — и узнайте примерную цену электромонтажа. Точную смету составим после замера.</p>
+    </div>
+
+    <div class="calculator__wrapper">
+      <div class="calculator__progress">
+        <div class="calculator__progress-bar" id="calc-progress-bar"></div>
+        <div class="calculator__steps-counter">
+          Шаг <span id="calc-current-step">1</span> из <span id="calc-total-steps">4</span>
+        </div>
+      </div>
+
+      <form class="calculator__form" id="calculator-form" novalidate>
+        <div class="calc-step" data-step="1">
+          <h3 class="calc-step__title">Какой у вас объект?</h3>
+          <div class="calc-options">
+            <label class="calc-option">
+              <input type="radio" name="objectType" value="apartment" checked>
+              <div class="calc-option__card">
+                <div class="calc-option__icon">🏢</div>
+                <span class="calc-option__title">Квартира</span>
+                <span class="calc-option__desc">От 450 ₽/м²</span>
+              </div>
+            </label>
+            <label class="calc-option">
+              <input type="radio" name="objectType" value="house">
+              <div class="calc-option__card">
+                <div class="calc-option__icon">🏠</div>
+                <span class="calc-option__title">Частный дом</span>
+                <span class="calc-option__desc">От 900 ₽/м²</span>
+              </div>
+            </label>
+            <label class="calc-option">
+              <input type="radio" name="objectType" value="office">
+              <div class="calc-option__card">
+                <div class="calc-option__icon">🏬</div>
+                <span class="calc-option__title">Офис / Коммерция</span>
+                <span class="calc-option__desc">От 700 ₽/м²</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="calc-step" data-step="2">
+          <h3 class="calc-step__title">Какой тип работ нужен?</h3>
+          <div class="calc-options">
+            <label class="calc-option">
+              <input type="radio" name="workType" value="new" checked>
+              <div class="calc-option__card">
+                <div class="calc-option__icon">✨</div>
+                <span class="calc-option__title">Электромонтаж с нуля</span>
+                <span class="calc-option__desc">Новостройка или полный ремонт</span>
+              </div>
+            </label>
+            <label class="calc-option">
+              <input type="radio" name="workType" value="replace">
+              <div class="calc-option__card">
+                <div class="calc-option__icon"></div>
+                <span class="calc-option__title">Замена проводки</span>
+                <span class="calc-option__desc">Демонтаж старой + монтаж новой</span>
+              </div>
+            </label>
+            <label class="calc-option">
+              <input type="radio" name="workType" value="partial">
+              <div class="calc-option__card">
+                <div class="calc-option__icon">🔧</div>
+                <span class="calc-option__title">Частичный ремонт</span>
+                <span class="calc-option__desc">Отдельные работы (розетки, щит и т.д.)</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="calc-step" data-step="3">
+          <h3 class="calc-step__title">Укажите площадь объекта</h3>
+          <div class="calc-area">
+            <div class="calc-area__slider-wrapper">
+              <input 
+                type="range" 
+                id="calc-area-slider" 
+                name="area" 
+                min="20" 
+                max="300" 
+                value="60" 
+                step="10"
+                class="calc-area__slider"
+              >
+              <div class="calc-area__labels">
+                <span>20 м²</span>
+                <span>100 м²</span>
+                <span>200 м²</span>
+                <span>300 м²</span>
+              </div>
+            </div>
+            <div class="calc-area__value">
+              <span id="calc-area-display">60</span> м²
+            </div>
+          </div>
+        </div>
+        <div class="calc-step" data-step="4">
+          <h3 class="calc-step__title">Дополнительные работы</h3>
+          <p class="calc-step__subtitle">Выберите всё, что нужно (можно несколько)</p>
+          <div class="calc-options calc-options--grid">
+            <label class="calc-option calc-option--checkbox">
+              <input type="checkbox" name="extras" value="shield">
+              <div class="calc-option__card">
+                <div class="calc-option__icon">⚡</div>
+                <span class="calc-option__title">Сборка электрощита</span>
+                <span class="calc-option__price">+12 000 ₽</span>
+              </div>
+            </label>
+            <label class="calc-option calc-option--checkbox">
+              <input type="checkbox" name="extras" value="lighting">
+              <div class="calc-option__card">
+                <div class="calc-option__icon"></div>
+                <span class="calc-option__title">Монтаж освещения</span>
+                <span class="calc-option__price">+8 000 ₽</span>
+              </div>
+            </label>
+            <label class="calc-option calc-option--checkbox">
+              <input type="checkbox" name="extras" value="smart">
+              <div class="calc-option__card">
+                <div class="calc-option__icon"></div>
+                <span class="calc-option__title">Умный дом</span>
+                <span class="calc-option__price">+35 000 ₽</span>
+              </div>
+            </label>
+            <label class="calc-option calc-option--checkbox">
+              <input type="checkbox" name="extras" value="floor">
+              <div class="calc-option__card">
+                <div class="calc-option__icon"></div>
+                <span class="calc-option__title">Тёплый пол (эл.)</span>
+                <span class="calc-option__price">+1 500 ₽/м²</span>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="calc-step calc-step--result" data-step="5">
+          <div class="calc-result">
+            <div class="calc-result__icon">🎉</div>
+            <h3 class="calc-result__title">Расчёт готов!</h3>
+            <p class="calc-result__subtitle">Примерная стоимость работ:</p>
+            
+            <div class="calc-result__price">
+              <span class="calc-result__price-from">от</span>
+              <span id="calc-result-min">0</span>
+              <span class="calc-result__price-currency">₽</span>
+            </div>
+            <div class="calc-result__price-range">
+              до <span id="calc-result-max">0</span> ₽
+            </div>
+
+            <p class="calc-result__note">
+              * Точная стоимость определяется после бесплатного замера. Выезд мастера по Кемерово — бесплатно.
+            </p>
+
+            <button type="button" class="calc-result__btn btn btn-primary" id="calc-to-form">
+              Оставить заявку на замер
+            </button>
+            <button type="button" class="calc-result__btn calc-result__btn--secondary" id="calc-restart">
+              Рассчитать заново
+            </button>
+          </div>
+        </div>
+        <div class="calc-nav" id="calc-nav">
+          <button type="button" class="calc-nav__btn calc-nav__btn--prev" id="calc-prev" disabled>
+            ← Назад
+          </button>
+          <button type="button" class="calc-nav__btn calc-nav__btn--next btn btn-primary" id="calc-next">
+            Далее →
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

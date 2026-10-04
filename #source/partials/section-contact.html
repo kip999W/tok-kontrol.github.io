@@ -1,0 +1,125 @@
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__wrapper">
+      <div class="contact__info">
+        <span class="contact__label">Свяжитесь с нами</span>
+        <h2 class="contact__title">Оставьте заявку — перезвоним за 15 минут</h2>
+        <p class="contact__subtitle">Расскажите о задаче, и мы подберём оптимальное решение. Консультация и выезд мастера — бесплатно.</p>
+
+        <ul class="contact__benefits">
+          <li class="contact__benefit">
+            <span class="contact__benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span>Бесплатная консультация и выезд</span>
+          </li>
+          <li class="contact__benefit">
+            <span class="contact__benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span>Смета в течение 24 часов</span>
+          </li>
+          <li class="contact__benefit">
+            <span class="contact__benefit-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <span>Гарантия 3 года по договору</span>
+          </li>
+        </ul>
+
+        <div class="contact__phone">
+          <span class="contact__phone-label">Или позвоните прямо сейчас:</span>
+          <a href="tel:+73842000000" class="contact__phone-number">+7 (999) 999-99-99</a>
+        </div>
+      </div>
+
+      <div class="contact__form-wrapper">
+        <form class="contact__form" id="contact-form" novalidate>
+          <input type="hidden" name="_subject" value="Новая заявка с сайта ТокКонтроль">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" style="display:none">
+          
+          <div class="contact__form-field">
+            <label for="contact-name" class="contact__label-field">Ваше имя *</label>
+            <input 
+              type="text" 
+              id="contact-name" 
+              name="name" 
+              class="contact__input" 
+              placeholder="Иван Иванов"
+              autocomplete="name"
+              required
+            >
+            <span class="contact__error" data-error-for="name"></span>
+          </div>
+
+          <div class="contact__form-field">
+            <label for="contact-phone" class="contact__label-field">Телефон *</label>
+            <input 
+              type="tel" 
+              id="contact-phone" 
+              name="phone" 
+              class="contact__input" 
+              placeholder="+7 (___) ___-__-__"
+              autocomplete="tel"
+              required
+            >
+            <span class="contact__error" data-error-for="phone"></span>
+          </div>
+
+          <div class="contact__form-field">
+            <label for="contact-service" class="contact__label-field">Услуга</label>
+            <select id="contact-service" name="service" class="contact__input contact__select">
+              <option value="">Выберите услугу</option>
+              <option value="emergency">Аварийный выезд</option>
+              <option value="wiring">Замена проводки</option>
+              <option value="shield">Сборка щита</option>
+              <option value="lighting">Установка освещения</option>
+              <option value="smart">Умный дом</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="contact__form-field">
+            <label for="contact-message" class="contact__label-field">Комментарий</label>
+            <textarea 
+              id="contact-message" 
+              name="message" 
+              class="contact__input contact__textarea" 
+              rows="4" 
+              placeholder="Опишите задачу или адрес объекта"
+            ></textarea>
+          </div>
+
+          <label class="contact__checkbox">
+            <input type="checkbox" name="agreement" class="contact__checkbox-input" required>
+            <span class="contact__checkbox-custom"></span>
+            <span class="contact__checkbox-text">
+              Согласен на обработку <a href="#" class="contact__link">персональных данных</a>
+            </span>
+          </label>
+
+          <button type="submit" class="contact__submit btn btn-primary">
+            <span class="contact__submit-text">Отправить заявку</span>
+            <span class="contact__submit-loader" hidden>
+              <svg class="contact__spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10" stroke-opacity="0.3"/>
+                <path d="M12 2a10 10 0 0 1 10 10"/>
+              </svg>
+              Отправляем...
+            </span>
+          </button>
+
+          <div class="contact__success" hidden>
+            <div class="contact__success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="contact__success-title">Заявка отправлена!</h3>
+            <p class="contact__success-text">Мы перезвоним вам в течение 15 минут в рабочее время.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
