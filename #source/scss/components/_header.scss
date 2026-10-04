@@ -96,6 +96,12 @@
     max-width: 300px;
   }
 
+  @media (max-width: 991px) {
+    top: 0 !important;
+    height: 100vh !important;
+    overflow-y: auto !important;
+  }
+
   @media (min-width: 992px) {
     position: static !important;
     visibility: visible !important;
