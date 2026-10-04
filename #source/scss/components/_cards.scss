@@ -1,0 +1,259 @@
+.card {
+  background-color: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-lg;
+    border-color: $color-accent;
+  }
+
+  &__header {
+    padding: 24px 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__icon {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color-accent, 0.1);
+    color: $color-accent;
+    border-radius: 12px;
+    font-size: 2rem;
+  }
+
+  &__avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+
+    .card:hover & {
+      transform: scale(1.05);
+    }
+  }
+
+  &__body {
+    padding: 24px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__category {
+    display: inline-block;
+    font-family: $font-primary;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $color-accent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    background: rgba($color-accent, 0.1);
+    border-radius: 20px;
+    width: fit-content;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: $color-text;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-family: $font-body;
+    font-size: 1rem;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+
+  &__text {
+    font-family: $font-body;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: $color-text-secondary;
+    margin: 0;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__list-item {
+    font-family: $font-body;
+    font-size: 0.9375rem;
+    color: $color-text;
+    padding-left: 24px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 8px;
+      height: 8px;
+      background: $color-accent;
+      border-radius: 50%;
+    }
+  }
+
+  &__rating {
+    color: $color-accent;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+  }
+
+  &__footer {
+    padding: 20px 24px;
+    border-top: 1px solid $color-border;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__price {
+    font-family: $font-primary;
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: $color-accent;
+  }
+
+  &__meta {
+    font-family: $font-body;
+    font-size: 0.875rem;
+    color: $color-text-muted;
+  }
+
+  &__badge {
+    display: inline-block;
+    font-family: $font-primary;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: $color-primary;
+    background: rgba($color-primary, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+}
+
+.card--service {
+  .card__header {
+    padding: 32px 32px 0;
+  }
+
+  .card__body {
+    padding: 24px 32px;
+  }
+
+  .card__footer {
+    padding: 20px 32px;
+  }
+}
+
+.card--portfolio {
+  padding: 0;
+
+  .card__header {
+    padding: 0;
+  }
+
+  .card__body {
+    padding: 24px;
+  }
+
+  .card__footer {
+    padding: 16px 24px;
+  }
+}
+
+.card--review {
+  .card__header {
+    padding: 24px 24px 0;
+  }
+
+  .card__body {
+    padding: 20px 24px;
+  }
+
+  .card__text {
+    font-style: italic;
+    color: $color-text;
+  }
+
+  .card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.card--team {
+  text-align: center;
+
+  .card__header {
+    justify-content: center;
+  }
+
+  .card__body {
+    align-items: center;
+  }
+
+  .card__footer {
+    justify-content: center;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

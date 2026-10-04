@@ -1,0 +1,22 @@
+/*
+  Main stylesheet entry point.
+  Imports the reset, design tokens, base styles, and component blocks used on the site.
+*/
+@import 'abstracts/variables';
+@import 'abstracts/reset';
+@import 'base/global';
+@import 'base/typography';
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/header';
+@import 'components/swiper';
+@import 'components/scroll-top';
+@import 'sections/services';
+@import 'sections/advantages';
+@import 'sections/portfolio';
+@import 'sections/calculator';
+@import 'sections/steps';
+@import 'sections/reviews';
+@import 'sections/team';
+@import 'sections/contacts';
+@import 'components/footer';

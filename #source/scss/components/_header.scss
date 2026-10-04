@@ -1,0 +1,223 @@
+/*
+  Header component styles.
+  Defines fixed navbar, branding, menu toggle, offcanvas menu, and links.
+*/
+.navbar {
+  width: 100%;
+  padding: 16px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
+
+  &.scrolled {
+    padding: 12px 0;
+    background-color: rgba($color-bg-dark, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: $shadow-lg;
+  }
+
+  @media (min-width: 992px) {
+    padding: 20px 0;
+    
+    &.scrolled {
+      padding: 14px 0;
+    }
+  }
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-brand {
+  font-family: $font-primary;
+  font-weight: 800;
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  color: $color-text-inverse !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  em {
+    font-style: normal;
+    color: $color-accent;
+  }
+}
+
+.navbar-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba($color-accent, 0.5);
+  border-radius: 8px;
+  background: rgba($color-bg-dark, 0.5);
+  box-shadow: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $color-accent;
+    background: rgba($color-accent, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.3);
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23D97706' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    opacity: 1;
+  }
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.offcanvas {
+  background-color: $color-bg-dark;
+  border-left: 1px solid rgba($color-white, 0.1);
+
+  @media (max-width: 767px) {
+    width: 85% !important;
+    max-width: 300px;
+  }
+
+  @media (min-width: 992px) {
+    position: static !important;
+    visibility: visible !important;
+    transform: none !important;
+    background: transparent !important;
+    width: auto !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+}
+
+.offcanvas-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba($color-white, 0.1);
+
+  @media (min-width: 992px) {
+    display: none;
+  }
+}
+
+.offcanvas-title {
+  font-family: $font-primary;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: $color-text-inverse !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  em {
+    font-style: normal;
+    color: $color-accent;
+  }
+}
+
+.btn-close {
+  width: 32px;
+  height: 32px;
+  border: none;
+  box-shadow: none;
+  opacity: 0.7;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' d='M6 6 L 24 24 M6 24 L 24 6'/%3E%3C/svg%3E");
+  background-size: 20px;
+  background-position: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.offcanvas-body {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  @media (min-width: 992px) {
+    padding: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+}
+
+// ✅ ГЛАВНОЕ ИСПРАВЛЕНИЕ: переопределяем Bootstrap-классы
+.navbar-nav {
+  margin: 0;
+  padding: 0;
+  flex-grow: 0 !important; // Убираем растягивание на мобильных
+  justify-content: flex-start !important; // Прижимаем к верху
+
+  @media (max-width: 991px) {
+    margin-top: 0;
+    padding: 20px 0 0 0; // Отступ только сверху
+  }
+
+  @media (min-width: 992px) {
+    flex-direction: row !important;
+    gap: 8px;
+    flex-grow: 1 !important; // Возвращаем на десктопе
+    justify-content: flex-end !important;
+  }
+}
+
+.nav-link {
+  font-family: $font-primary;
+  font-weight: 600;
+  color: $color-text-inverse !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+  border-radius: 6px;
+
+  &:hover,
+  &.active {
+    color: $color-accent !important;
+  }
+
+  @media (max-width: 991px) {
+    font-size: 1rem;
+    padding: 14px 20px !important;
+    border-bottom: 1px solid rgba($color-white, 0.08);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:active {
+      transform: scale(0.98);
+      background: rgba($color-white, 0.05);
+    }
+  }
+
+  @media (min-width: 992px) {
+    font-size: 0.9375rem;
+    padding: 8px 16px !important;
+  }
+}

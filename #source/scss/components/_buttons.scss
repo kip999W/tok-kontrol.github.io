@@ -1,0 +1,109 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 32px;
+  font-family: $font-primary;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+
+  &:focus-visible {
+    outline: 3px solid $color-accent;
+    outline-offset: 3px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    padding: 12px 24px;
+    font-size: 0.875rem;
+  }
+}
+
+.btn-primary {
+  background-color: $color-btn-primary-bg;
+  color: $color-btn-primary-text;
+  border-color: $color-btn-primary-bg;
+  box-shadow: 0 4px 14px rgba($color-accent, 0.4);
+
+  &:hover {
+    background-color: $color-btn-primary-hover;
+    border-color: $color-btn-primary-hover;
+    color: $color-btn-primary-text;
+    box-shadow: 0 6px 20px rgba($color-accent, 0.6);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba($color-accent, 0.4);
+  }
+}
+
+.btn-secondary {
+  background-color: $color-btn-secondary-bg;
+  color: $color-btn-secondary-text;
+  border-color: $color-btn-secondary-border;
+
+  &:hover {
+    background-color: $color-btn-secondary-hover;
+    color: $color-white;
+    border-color: $color-btn-secondary-hover;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn-dark {
+  background-color: $color-btn-dark-bg;
+  color: $color-btn-dark-text;
+  border-color: $color-btn-dark-bg;
+
+  &:hover {
+    background-color: $color-btn-dark-hover;
+    border-color: $color-btn-dark-hover;
+    color: $color-btn-dark-text;
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.btn--full {
+  width: 100%;
+}
+
+.btn--sm {
+  padding: 10px 20px;
+  font-size: 0.875rem;
+}
+
+.btn--lg {
+  padding: 18px 40px;
+  font-size: 1.125rem;
+}

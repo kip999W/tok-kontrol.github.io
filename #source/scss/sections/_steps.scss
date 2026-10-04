@@ -1,0 +1,286 @@
+.steps {
+  padding: 100px 0;
+  background-color: $color-bg-body;
+  position: relative;
+
+  @media (max-width: 1024px) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 40px 0;
+  }
+}
+
+.steps__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 32px;
+  }
+}
+
+.steps__label {
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: $color-accent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  background: rgba($color-accent, 0.1);
+  border-radius: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 0.75rem;
+    padding: 5px 12px;
+    letter-spacing: 1.5px;
+  }
+}
+
+.steps__title {
+  font-family: $font-primary;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: $color-text;
+  margin: 0 0 20px;
+  line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    margin-bottom: 16px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: clamp(1.5rem, 6vw, 1.875rem);
+  }
+}
+
+.steps__subtitle {
+  font-family: $font-body;
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  line-height: 1.6;
+  color: $color-text-secondary;
+  margin: 0;
+
+  @media (max-width: 480px) {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+}
+
+.steps__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      $color-accent 10%,
+      $color-accent 90%,
+      transparent 100%
+    );
+    opacity: 0.3;
+    z-index: 0;
+  }
+
+  @media (max-width: 1440px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    
+    &::before {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px; // Чуть больше воздуха между карточками по вертикали
+  }
+}
+
+.step-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Центрируем всё по горизонтали
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-lg;
+    border-color: rgba($color-accent, 0.3);
+
+    .step-card__icon {
+      background: $color-accent;
+      color: $color-primary;
+      transform: rotate(-10deg) scale(1.1);
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 28px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 28px 20px; // Комфортные вертикальные отступы
+    text-align: center;
+  }
+}
+
+.step-card__number {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  background: $color-accent;
+  color: $color-primary;
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 800;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba($color-accent, 0.4);
+  transition: all 0.3s ease;
+
+  .step-card:hover & {
+    transform: translateX(-50%) scale(1.15);
+    box-shadow: 0 6px 16px rgba($color-accent, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+    top: -14px;
+  }
+
+  @media (max-width: 480px) {
+    // Оставляем абсолютным как красивый "бейдж" сверху карточки
+    width: 28px;
+    height: 28px;
+    font-size: 0.75rem;
+    top: -14px;
+  }
+}
+
+.step-card__icon {
+  width: 64px;
+  height: 64px;
+  margin: 16px auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-primary, 0.04);
+  color: $color-primary;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+
+  svg {
+    width: 32px;
+    height: 32px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 1024px) {
+    width: 56px;
+    height: 56px;
+    margin: 12px auto 16px;
+
+    svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    width: 52px;
+    height: 52px;
+    margin: 20px auto 16px; // Увеличен верхний отступ, чтобы не сливаться с номером
+    flex-shrink: 0;
+
+    svg {
+      width: 26px;
+      height: 26px;
+    }
+  }
+}
+
+.step-card__title {
+  font-family: $font-primary;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-text;
+  margin: 0 0 12px;
+  line-height: 1.2;
+
+  @media (max-width: 1024px) {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.125rem; // Чуть крупнее для удобного чтения в колонке
+    margin-bottom: 10px;
+  }
+}
+
+.step-card__text {
+  font-family: $font-body;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: $color-text-secondary;
+  margin: 0;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,368 @@
+.contact {
+  padding: 100px 0;
+  background-color: $color-bg-section;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+.contact__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+// ===== ЛЕВАЯ КОЛОНКА =====
+.contact__info {
+  @media (max-width: 1023px) {
+    text-align: center;
+  }
+}
+
+.contact__label {
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: $color-accent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  background: rgba($color-accent, 0.1);
+  border-radius: 20px;
+}
+
+.contact__title {
+  font-family: $font-primary;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: $color-text;
+  margin: 0 0 20px;
+  line-height: 1.1;
+}
+
+.contact__subtitle {
+  font-family: $font-body;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: $color-text-secondary;
+  margin: 0 0 32px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.contact__benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact__benefit {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: $font-body;
+  font-size: 1rem;
+  color: $color-text;
+
+  @media (max-width: 1023px) {
+    justify-content: center;
+  }
+}
+
+.contact__benefit-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-accent, 0.15);
+  color: $color-accent;
+  border-radius: 50%;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.contact__phone {
+  padding-top: 24px;
+  border-top: 1px solid $color-border;
+
+  @media (max-width: 1023px) {
+    text-align: center;
+  }
+}
+
+.contact__phone-label {
+  display: block;
+  font-family: $font-body;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+  margin-bottom: 8px;
+}
+
+.contact__phone-number {
+  font-family: $font-primary;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: $color-primary;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-accent;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+// ===== ПРАВАЯ КОЛОНКА (ФОРМА) =====
+.contact__form-wrapper {
+  background: $color-bg-card;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: $shadow-lg;
+  border: 1px solid $color-border;
+
+  @media (max-width: 768px) {
+    padding: 28px 20px;
+  }
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact__form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__label-field {
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $color-text;
+}
+
+.contact__input {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: $font-body;
+  font-size: 1rem;
+  color: $color-text;
+  background: $color-bg-body;
+  border: 2px solid $color-border;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent;
+    box-shadow: 0 0 0 4px rgba($color-accent, 0.1);
+  }
+
+  &--error {
+    border-color: #EF4444;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(#EF4444, 0.1);
+    }
+  }
+}
+
+.contact__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+.contact__textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: $font-body;
+}
+
+.contact__error {
+  font-family: $font-body;
+  font-size: 0.8125rem;
+  color: #EF4444;
+  min-height: 18px;
+}
+
+// ===== ЧЕКБОКС =====
+.contact__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: $color-text-secondary;
+}
+
+.contact__checkbox-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &--error + .contact__checkbox-custom {
+    border-color: #EF4444;
+  }
+}
+
+.contact__checkbox-custom {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border: 2px solid $color-border;
+  border-radius: 5px;
+  background: $color-bg-body;
+  transition: all 0.2s ease;
+  position: relative;
+  margin-top: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid $color-white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+}
+
+.contact__checkbox-input:checked + .contact__checkbox-custom {
+  background: $color-accent;
+  border-color: $color-accent;
+
+  &::after {
+    opacity: 1;
+  }
+}
+
+.contact__checkbox-text {
+  line-height: 1.4;
+}
+
+.contact__link {
+  color: $color-primary;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  &:hover {
+    color: $color-accent;
+  }
+}
+
+// ===== КНОПКА ОТПРАВКИ =====
+.contact__submit {
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 54px;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.contact__spinner {
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+// ===== БЛОК УСПЕХА =====
+.contact__success {
+  text-align: center;
+  padding: 32px 20px;
+  animation: fadeIn 0.4s ease;
+}
+
+.contact__success-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  background: rgba($color-accent, 0.15);
+  color: $color-accent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.contact__success-title {
+  font-family: $font-primary;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: $color-text;
+  margin: 0 0 12px;
+}
+
+.contact__success-text {
+  font-family: $font-body;
+  font-size: 1rem;
+  color: $color-text-secondary;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

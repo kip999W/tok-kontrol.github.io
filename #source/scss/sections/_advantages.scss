@@ -1,0 +1,137 @@
+.advantages {
+  padding: 100px 0;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+  }
+}
+
+.advantages__header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+
+  @media (max-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.advantages__label {
+  display: inline-block;
+  font-family: $font-primary;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: $color-accent;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  background: rgba($color-accent, 0.1);
+  border-radius: 20px;
+}
+
+.advantages__title {
+  font-family: $font-primary;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: $color-text;
+  margin: 0 0 20px;
+  line-height: 1.1;
+}
+
+.advantages__subtitle {
+  font-family: $font-body;
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: $color-text-secondary;
+  margin: 0;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.advantages__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  @media (max-width: 1023px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.advantage-card {
+  background: $color-bg-card;
+  border: 1px solid $color-border;
+  border-radius: 16px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-lg;
+    border-color: rgba($color-accent, 0.3);
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 24px;
+    text-align: left;
+    align-items: flex-start;
+  }
+}
+
+.advantage-card__icon-wrapper {
+  margin-bottom: 24px;
+}
+
+.advantage-card__icon {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba($color-primary, 0.04);
+  color: $color-primary;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .advantage-card:hover & {
+    background: $color-accent;
+    color: $color-primary;
+    transform: rotate(-10deg) scale(1.1);
+  }
+}
+
+.advantage-card__title {
+  font-family: $font-primary;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $color-text;
+  margin: 0 0 16px;
+  line-height: 1.2;
+}
+
+.advantage-card__text {
+  font-family: $font-body;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $color-text-secondary;
+  margin: 0;
+}

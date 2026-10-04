@@ -1,0 +1,53 @@
+/*
+  Design tokens for the TokKontrol brand.
+  Stores fonts, color palette, buttons, and shadow variables used across the site.
+*/
+$font-primary: 'Montserrat', sans-serif;
+$font-body: 'Inter', sans-serif;
+
+$color-primary: #0A192F;
+$color-primary-light: #1E3A8A;
+$color-primary-hover: #153561;
+
+$color-accent: #F59E0B;
+$color-accent-dark: #D97706;
+
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$color-gray-100: #F3F4F6;
+$color-gray-200: #E5E7EB;
+$color-gray-500: #6B7280;
+$color-gray-600: #4B5563;
+$color-gray-800: #1F2937;
+
+$color-text: $color-gray-800;
+$color-text-secondary: $color-gray-600;
+$color-text-muted: $color-gray-500;
+$color-text-inverse: $color-white;
+$color-text-accent: $color-accent;
+
+$color-bg-body: $color-white;
+$color-bg-section: $color-gray-100;
+$color-bg-card: $color-white;
+$color-bg-dark: $color-primary;
+
+$color-border: $color-gray-200;
+$color-border-focus: $color-primary-light;
+
+$color-btn-primary-bg: $color-accent;
+$color-btn-primary-text: $color-primary;
+$color-btn-primary-hover: $color-accent-dark;
+
+$color-btn-secondary-bg: transparent;
+$color-btn-secondary-text: $color-primary;
+$color-btn-secondary-border: $color-primary;
+$color-btn-secondary-hover: $color-primary;
+
+$color-btn-dark-bg: $color-primary;
+$color-btn-dark-text: $color-white;
+$color-btn-dark-hover: $color-primary-hover;
+
+$shadow-sm: 0 2px 4px rgba($color-primary, 0.08);
+$shadow-md: 0 4px 12px rgba($color-primary, 0.12);
+$shadow-lg: 0 8px 24px rgba($color-primary, 0.16);
