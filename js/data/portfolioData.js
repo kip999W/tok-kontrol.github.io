@@ -1,0 +1,62 @@
+export const portfolioData = [
+  {
+    img: './img/content/portfolio/apartment-shield.png',
+    category: 'apartment',
+    title: 'Замена проводки в двушке',
+    address: 'ул. Весенняя, Кемерово',
+    desc: 'Полная замена алюминиевой проводки на медную. Установлено 12 розеток, отдельная линия для духовки.',
+    price: 28000,
+    duration: '2 дня',
+  },
+  {
+    img: './img/content/portfolio/apartment-wiring.png',
+    category: 'apartment',
+    title: 'Сборка электрощита ABB',
+    address: 'пр. Советский, Кемерово',
+    desc: 'Сборка и монтаж щита на 24 модуля. Автоматика ABB, маркировка всех линий.',
+    price: 15000,
+    duration: '1 день',
+  },
+  {
+    img: './img/content/portfolio/apartment-lighting.png',
+    category: 'apartment',
+    title: 'Монтаж освещения',
+    address: 'ул. Терешковой, Кемерово',
+    desc: 'Установка 8 люстр, 24 точечных светильников, LED-подсветка кухни и ванной.',
+    price: 18000,
+    duration: '1 день',
+  },
+  {
+    img: './img/content/portfolio/house-electrical.png',
+    category: 'house',
+    title: 'Электрика в коттедже',
+    address: 'п. Берёзовский',
+    desc: 'Полный электромонтаж дома 180 м². Трёхфазный ввод, заземление, молниезащита.',
+    price: 280000,
+    duration: '14 дней',
+  },
+  {
+    img: './img/content/portfolio/house-smart.png',
+    category: 'house',
+    title: 'Умный дом под ключ',
+    address: 'п. Металлплощадка',
+    desc: 'Автоматизация освещения, климата, безопасности. Интеграция с Алисой и Google Home.',
+    price: 320000,
+    duration: '21 день',
+  },
+  {
+    img: './img/content/portfolio/commercial-server.png',
+    category: 'commercial',
+    title: 'Офисное помещение',
+    address: 'ул. Кирова, Кемерово',
+    desc: 'Электрика для офиса 120 м². Серверная, освещение рабочих мест, ИБП.',
+    price: 145000,
+    duration: '7 дней',
+  },
+];
+
+export const categoryNames = {
+  apartment: 'Квартира',
+  house: 'Частный дом',
+  commercial: 'Коммерция',
+};
